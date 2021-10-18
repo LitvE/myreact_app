@@ -1,7 +1,11 @@
 import React from "react";
 
+//props - это входящие параметры
+//при отрисовке переменная пишется в {}
+
 const Hello = props =>{
-    return <div>Hello React!!!</div>
+    const {name, surname} = props;
+    return <div>Hello, {name} {surname}</div>
 }
 
 export default Hello;
