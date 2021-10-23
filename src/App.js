@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import Hello from './Components/Hello_fun';
-import HelloClass from './Components/Hello_class';
+//import Hello from './Components/Hello_fun';
+//import HelloClass from './Components/Hello_class';
 import { Component } from 'react';
 //import Car from './Components/Car';
-import User from './Components/User';
+//import User from './Components/User';
+import UsersList from './Components/UsersList';
 
 // <>...</> сокращенная запись <React.Fragment></React.Fragment>
 //REACT компоненты бывают 2-ч видов: функциональные (function) и классовые (Class)
@@ -41,7 +42,7 @@ class App extends Component{
   }
 
 }*/
-
+/*
 class App extends Component{
 
   constructor(props){
@@ -63,6 +64,8 @@ class App extends Component{
     return <User name={name} age={age} isSelected={isSelected} clickHandler={this.clickHandler}/>;
   }
 
-}
+}*/
+
+const App = () => <UsersList />;
 
 export default App;
