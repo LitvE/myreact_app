@@ -3,7 +3,7 @@ import './App.css';
 import Hello from './Components/Hello_fun';
 import HelloClass from './Components/Hello_class';
 import { Component } from 'react';
-import { Counter } from './Components/Counter';
+import Car from './Components/Car';
 
 // <>...</> сокращенная запись <React.Fragment></React.Fragment>
 //REACT компоненты бывают 2-ч видов: функциональные (function) и классовые (Class)
@@ -30,12 +30,11 @@ class App extends Component{
   }
 
   render(){
-    const {username, isSaying} = this.state;
+ 
     return (
       <>
-      <Hello name={username}/>
-      <HelloClass name={username} greeting={isSaying}/>
-      <Counter step={5}/>
+          <Car mark={'Mazda'} type={'CX5'} price={25000}/>
+          <Car mark={'Ford'} type={'Fusion'} price={5000}/>
       </>
     );
   }

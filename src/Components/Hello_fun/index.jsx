@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Hello.module.scss";
+
 
 //props - это входящие параметры
 //при отрисовке переменная пишется в {}
