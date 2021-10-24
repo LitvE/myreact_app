@@ -1,11 +1,14 @@
 //import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
 //import Hello from './Components/Hello_fun';
 //import HelloClass from './Components/Hello_class';
-import { Component } from 'react';
+//import { Component } from 'react';
 //import Car from './Components/Car';
 //import User from './Components/User';
 import UsersList from './Components/UsersList';
+//import CarsList from './Components/CarsList';
+import SelectedUsersList from './Components/SelectedUsersList';
 
 // <>...</> сокращенная запись <React.Fragment></React.Fragment>
 //REACT компоненты бывают 2-ч видов: функциональные (function) и классовые (Class)
@@ -66,6 +69,38 @@ class App extends Component{
 
 }*/
 
-const App = () => <UsersList />;
+//const App = () => <UsersList />;
+//const App = () => <CarsList />;
+
+const usersDB = [
+  {id: 1, name: 'Grut', age: 25},
+  {id: 2, name: 'Ella', age: 20},
+]
+
+class App extends Component{
+  constructor(props){
+    super(props);
+     this.state = {
+      users: usersDB.map((u) => ({
+          ...u, 
+          isSelected: false,
+      })),
+  };
+}
+
+  setUsers = (newUsers) =>{
+    this.setState({users: newUsers});
+  }
+
+  render(){
+  const {users} = this.state;
+    return (
+      <>
+      <UsersList users={users} setUsers={this.setUsers}/>
+      <SelectedUsersList users={users}/>
+      </>
+    );
+  }
+}
 
 export default App;

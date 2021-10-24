@@ -1,27 +1,13 @@
 import React from "react";
 import UsersListItem from "./UsersListItem";
 
-const usersDB = [
-    {id: 1, name: 'Grut', age: 25},
-    {id: 2, name: 'Ella', age: 20},
-]
-
 class UsersList extends React.Component{
-    constructor(props){
-        super(props);
 
-        this.state ={
-            users: usersDB.map((u) => ({
-                ...u, 
-                isSelected: false,
-            })),
-        };
-    }
 
     mapUsers = (u, index) => {
         const {id} = u;
         const clickHandler = () =>{
-            const {users} = this.state;
+            const {users, setUsers} = this.props;
 
             const newUsers = [...users];
             newUsers[index] = {
@@ -29,7 +15,7 @@ class UsersList extends React.Component{
                  isSelected: !newUsers[index].isSelected,
                 };
 
-            this.setState({users: newUsers});
+            setUsers(newUsers);
         };
 
         return <UsersListItem key={id} user = {u} clickHandler={clickHandler}/>;
@@ -43,7 +29,7 @@ class UsersList extends React.Component{
     // )
 
     render(){
-        const {users} = this.state;
+        const {users} = this.props;
 
         return (
             <ul>

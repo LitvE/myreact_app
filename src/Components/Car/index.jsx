@@ -6,16 +6,17 @@ import styles from "./Car.module.scss";
 class Car extends React.Component{
     constructor(props){
         super(props);
-
         this.state = {
+            id: props.id,
             mark: props.mark,
             type: props.type,
             price: props.price,
+            deleteHandler: props.deleteHandler,
         }
     }
 
     render(){
-        const {mark, type, price} = this.state;
+        const {mark, type, price, deleteHandler} = this.state;
         const carArticleStyles = classNames(styles.greenColor, {[styles.blueColor]: price >= 20000});
 
         const markInlineStyle = {
@@ -27,6 +28,7 @@ class Car extends React.Component{
                 <div style={markInlineStyle}>{mark}</div>
                 <div>{type}</div>
                 <div>{price}</div>
+                <button onClick={deleteHandler}>Del</button>
             </article>
         );
     }
