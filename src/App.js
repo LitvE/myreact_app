@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
+import MouseTracker from './Components/MouseTracker';
 //import Hello from './Components/Hello_fun';
 //import HelloClass from './Components/Hello_class';
 //import { Component } from 'react';
@@ -103,33 +104,51 @@ class App extends Component{
   }
 }*/
 
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       count: 0,
+//     }
+//     this.updatedCounter = 0;
+//     console.log('Constructor');
+//   }
+//   //after first render
+//   componentDidMount(){
+//     console.log('Did mount')
+//   }
+//   //after 2...n render
+//   componentDidUpdate(prevProps, prevState){
+//     this.updatedCounter++;
+//     console.log('Did update', this.updatedCounter);
+//   }
+//   //before unmount
+//   componentWillUnmount(){}
+
+//   render(){
+//     return (
+//       <>
+//       <div>{this.state.count}</div>
+//       <button onClick={() => {this.setState({count: this.state.count+1})}}>+</button>
+//       </>
+//     );
+//   }
+// }
+
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      count: 0,
-    }
-    this.updatedCounter = 0;
-    console.log('Constructor');
+      isMounted: false,
+    };
   }
-  //after first render
-  componentDidMount(){
-    console.log('Did mount')
-  }
-  //after 2...n render
-  componentDidUpdate(prevProps, prevState){
-    this.updatedCounter++;
-    console.log('Did update', this.updatedCounter);
-  }
-  //before unmount
-  componentWillUnmount(){}
 
   render(){
     return (
-      <>
-      <div>{this.state.count}</div>
-      <button onClick={() => {this.setState({count: this.state.count+1})}}>+</button>
-      </>
+    <>
+    <button onClick={ () => {this.setState({isMounted: !this.state.isMounted})}}>Show/Hide</button>
+     {!this.state.isMounted && <MouseTracker />}
+     </>
     );
   }
 }
