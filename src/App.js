@@ -1,7 +1,8 @@
 //import logo from './logo.svg';
 import { Component } from 'react';
 import './App.css';
-import MouseTracker from './Components/MouseTracker';
+//import MouseTracker from './Components/MouseTracker';
+import StopWatch from './Components/Stopwatch';
 //import Hello from './Components/Hello_fun';
 //import HelloClass from './Components/Hello_class';
 //import { Component } from 'react';
@@ -135,20 +136,31 @@ class App extends Component{
 //   }
 // }
 
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       isMounted: false,
+//     };
+//   }
+
+//   render(){
+//     return (
+//     <>
+//     <button onClick={ () => {this.setState({isMounted: !this.state.isMounted})}}>Show/Hide</button>
+//      {!this.state.isMounted && <MouseTracker />}
+//      </>
+//     );
+//   }
+// }
+
 class App extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      isMounted: false,
-    };
-  }
 
   render(){
     return (
     <>
-    <button onClick={ () => {this.setState({isMounted: !this.state.isMounted})}}>Show/Hide</button>
-     {!this.state.isMounted && <MouseTracker />}
-     </>
+    <StopWatch />
+    </>
     );
   }
 }
