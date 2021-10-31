@@ -6,7 +6,7 @@ function SelectedUsersList (props){
     return(
         <ol>
             {filtredUsers.map((fu) => (
-                <li>{fu.name}</li>
+                <li key={fu.id}>{fu.name} {fu.surname}</li>
             ))}
         </ol>
     );

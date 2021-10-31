@@ -1,8 +1,9 @@
 //import logo from './logo.svg';
-import { Component } from 'react';
+//import { Component } from 'react';
 import './App.css';
 //import MouseTracker from './Components/MouseTracker';
-import StopWatch from './Components/Stopwatch';
+//import StopWatch from './Components/Stopwatch';
+//import UserList from './Components/UserList';
 //import Hello from './Components/Hello_fun';
 //import HelloClass from './Components/Hello_class';
 //import { Component } from 'react';
@@ -11,6 +12,8 @@ import StopWatch from './Components/Stopwatch';
 //import UsersList from './Components/UsersList';
 //import CarsList from './Components/CarsList';
 //import SelectedUsersList from './Components/SelectedUsersList';
+//import Calendar from './Components/Calendar';
+import Manager from './Components/NewCounter';
 
 // <>...</> сокращенная запись <React.Fragment></React.Fragment>
 //REACT компоненты бывают 2-ч видов: функциональные (function) и классовые (Class)
@@ -154,15 +157,56 @@ class App extends Component{
 //   }
 // }
 
-class App extends Component{
+// class App extends Component{
 
-  render(){
-    return (
-    <>
-    <StopWatch />
-    </>
-    );
-  }
+//   render(){
+//     return (
+//     <>
+//     <StopWatch />
+//     </>
+//     );
+//   }
+// }
+
+// const db = [
+//   {id: 1, name: 'name1', surname: 'surname1'},
+//   {id: 2, name: 'name2', surname: 'surname2'},
+//   {id: 3, name: 'name3', surname: 'surname3'},
+// ];
+
+// class App extends Component{
+//   constructor(props){
+//       super(props);
+//       this.state = {
+//       users: db.map( u => ({...u, isSelected: false})),
+//     };
+//   }
+
+//   updateUsers = (newUsers) => {
+//     this.setState({users: newUsers});
+//   }
+
+//   render(){
+//     const {users} = this.state;
+//     return (
+//     <>
+//     <UserList users={users} updateUsers={this.updateUsers}/>
+//     <SelectedUsersList users={users}/>
+//     </>
+//     );
+//   }
+// }
+// const currentDate = new Date('2021, 10, 30');
+
+// const App = () => {
+
+//   return <Calendar currentDate={currentDate}/>;
+// }
+
+const App = () => {
+
+  return <Manager />
+
 }
 
 export default App;
