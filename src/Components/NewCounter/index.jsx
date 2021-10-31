@@ -1,6 +1,7 @@
 import React from 'react'
 import Counter from './Counter'
 import Level from './Level'
+import style from '../NewCounter/NewCounter.module.scss';
 
 class Manager extends React.Component {
     constructor(props){
@@ -11,18 +12,15 @@ class Manager extends React.Component {
     }
 
     updateScore = (newScore) => {
-        let {score} = this.state;
       this.setState({score: newScore});
-      console.log('NewSore from APP' + newScore);
-      console.log('Score From App ' + score)
     }
 
     render(){
         const {score} = this.state;
         return (
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, error.</p>
-                <Counter score={score} updateScore={this.updateScore}/>
+            <div className={style.component3}>
+                <p>Component 3</p>
+                <Counter score={score} step={5} updateScore={this.updateScore}/>
                 <Level score={score}/>
             </div>
         )

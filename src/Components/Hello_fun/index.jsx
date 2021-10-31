@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "proto-types";
 
 
 //props - это входящие параметры
@@ -25,5 +26,13 @@ const Hello = props =>{
    return <div>Hello, ReactJS!!</div>*/
 }
 
+Hello.PropTypes = {
+    name: PropTypes.string,
+    greeting: PropTypes.bool,
+};
+
+Hello.defaultProps = {
+    name: 'Unknown',
+};
 
 export default Hello;

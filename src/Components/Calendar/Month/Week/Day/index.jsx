@@ -2,6 +2,7 @@ import React from 'react';
 import {format, isSameDay, isSameMonth} from 'date-fns';
 import classNames from 'classnames';
 import styles from './Day.module.scss';
+import PropTypes from 'prop-types';
 
 const Day = (props) => {
 
@@ -15,6 +16,16 @@ const Day = (props) => {
                 {format(dayDate, 'd')};
             </li>
         )
+}
+
+Day.propTypes = {
+    date: PropTypes.instanceOf(Date),
+    dayDate: PropTypes.instanceOf(Date),
+    currentDate: PropTypes.instanceOf(Date),
+}
+
+Day.defaultProps = {
+    currentDate: new Date(),
 }
 
 export default Day;

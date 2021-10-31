@@ -13,7 +13,8 @@ import './App.css';
 //import CarsList from './Components/CarsList';
 //import SelectedUsersList from './Components/SelectedUsersList';
 //import Calendar from './Components/Calendar';
-import Manager from './Components/NewCounter';
+//import Manager from './Components/NewCounter';
+import SimpleForm from './Components/SimpleForm';
 
 // <>...</> сокращенная запись <React.Fragment></React.Fragment>
 //REACT компоненты бывают 2-ч видов: функциональные (function) и классовые (Class)
@@ -203,9 +204,15 @@ class App extends Component{
 //   return <Calendar currentDate={currentDate}/>;
 // }
 
+// const App = () => {
+
+//   return <Manager />
+
+// }
+
 const App = () => {
 
-  return <Manager />
+  return <SimpleForm />
 
 }
 

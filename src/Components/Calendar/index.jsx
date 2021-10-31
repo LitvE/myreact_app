@@ -1,6 +1,7 @@
 import React from 'react';
 //import {add, sub, format} from 'date-fns';
 import Month from './Month';
+import PropTypes from 'prop-types';
 
 // class Calendar extends Component {
 //     constructor(props){
@@ -42,6 +43,14 @@ const Calendar = ({currentDate}) => {
             <Month date={currentDate} currentDate={currentDate}/>
         </div>
     )
+}
+
+Calendar.propTypes = {
+    currentDate: PropTypes.instanceOf(Date)
+}
+
+Calendar.defaultProps ={
+    currentDate: new Date(),
 }
 
 export default Calendar;

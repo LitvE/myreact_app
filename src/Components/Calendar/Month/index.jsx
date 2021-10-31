@@ -2,6 +2,7 @@ import React from 'react';
 import { eachWeekOfInterval, startOfMonth, endOfMonth } from 'date-fns';
 import Week from './Week';
 import {format} from 'date-fns';
+import PropTypes from 'prop-types';
 
 const getMonth = ({date, currentDate}) => {
     eachWeekOfInterval({
@@ -28,6 +29,15 @@ function Month (props) {
             {getMonth(props)}
         </div>
     )
+}
+
+Month.propTypes = {
+    date: PropTypes.instanceOf(Date),
+    currentDate: PropTypes.instanceOf(Date)
+}
+
+Month.defaultProps = {
+    currentDate: new Date(),
 }
 
 export default Month;
