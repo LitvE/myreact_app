@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../NewCounter/NewCounter.module.scss';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 function Level (props){
 
@@ -13,12 +13,12 @@ function Level (props){
     )
 }
 
-Level.propTypes = {
-    score: PropTypes.number,
-}
+// Level.propTypes = {
+//     score: PropTypes.number,
+// }
 
-Level.defaultProps = {
-    score: 0,
-}
+// Level.defaultProps = {
+//     score: 0,
+// }
 
 export default Level;

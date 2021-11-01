@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import style from '../NewCounter/NewCounter.module.scss';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class Counter extends Component {
     // constructor(props){
@@ -8,17 +8,17 @@ class Counter extends Component {
     // }
 
     increase = ()=>{
-        const {score, updateScore, step} = this.props;
+        const {score, setScore, step} = this.props;
         let newScore = score + step;
-        updateScore(newScore);
+        setScore(newScore);
    
         //this.setState({value: value+this.props.step});
     }
 
     decrease = ()=>{
-        const {score, updateScore, step} = this.props;
+        const {score, setScore, step} = this.props;
         let newScore = score - step;
-        updateScore(newScore);
+        setScore(newScore);
         //this.setState({value: value-this.props.step});
     }
 
@@ -35,14 +35,14 @@ class Counter extends Component {
     }
 }
 
-Counter.propTypes = {
-    score: PropTypes.number,
-    step: 1,
-    updateScore: PropTypes.func.isRequired,
-}
+// Counter.propTypes = {
+//     score: PropTypes.number,
+//     step: PropTypes.number,
+//     setScore: PropTypes.func.isRequired,
+// }
 
-Counter.defaultProps = {
-    score: 0,
-}
+// Counter.defaultProps = {
+//     score: 0,
+// }
 
 export default Counter;

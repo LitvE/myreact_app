@@ -7,12 +7,22 @@ class Manager extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            score: 50,
+            score: 0
         };
     }
 
-    updateScore = (newScore) => {
+    setScore = (newScore) => {
       this.setState({score: newScore});
+    }
+
+    handleScore = ({target: {value}}) => {
+        this.setState({score: value});
+        //console.log(value);
+    }
+
+
+    handleSubmit = e =>{
+        e.preventDefault();
     }
 
     render(){
@@ -20,7 +30,12 @@ class Manager extends React.Component {
         return (
             <div className={style.component3}>
                 <p>Component 3</p>
-                <Counter score={score} step={5} updateScore={this.updateScore}/>
+                <form>
+                    <p>Component 3</p>
+                    <input type='text' name='score' value={score} onChange={this.handleScore} ></input>
+                    <button type='submit'>Submit</button>
+                </form>
+                <Counter score={score} step={5} setScore={this.setScore}/>
                 <Level score={score}/>
             </div>
         )
